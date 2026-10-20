@@ -1,0 +1,82 @@
+{
+  "selection": "by-script-meaning",
+  "copyScenesAcrossVideos": false,
+  "scenePlanRequired": [
+    "spokenPhrase",
+    "viewerTakeaway",
+    "object",
+    "action",
+    "result",
+    "beats",
+    "assets"
+  ],
+  "beatSpacingSeconds": [
+    0.5,
+    1.0
+  ],
+  "allowReadingHold": true,
+  "background": {
+    "grid": true,
+    "centerGlow": true,
+    "themeSwitch": "only-at-semantic-turn"
+  },
+  "sound": {
+    "trigger": "meaningful-action-only",
+    "gainChangeDb": 3,
+    "preserveUserMusic": true
+  },
+  "fallback": "camera-with-motivated-zoom",
+  "motionExamples": "src/MotionExamples.tsx",
+  "presets": {
+    "smooth": "neutral entrance and focus",
+    "bounce": "single meaningful accent",
+    "morph": "continuous shape or state transformation"
+  },
+  "promptDemoOrder": [
+    "command input",
+    "result at spoken cue"
+  ],
+  "typography": {
+    "family": "Tahoma",
+    "localFonts": true,
+    "rasterText": "prefer editable overlays",
+    "realProductUI": "match reference typography"
+  },
+  "interfaceFidelity": {
+    "referenceRequired": true,
+    "noUnicodeButtonIcons": true,
+    "check": [
+      "geometry",
+      "spacing",
+      "icons",
+      "colors",
+      "typography"
+    ]
+  },
+  "editorialText": {
+    "noProductionLabels": true,
+    "noRepeatedCommandAboveResult": true,
+    "provenance": "metadata files"
+  },
+  "emphasis": {
+    "stressedWord": "selection",
+    "component": "src/scenes/text.tsx SelectedText",
+    "decorativeHighlight": false
+  },
+  "interfaceDemo": {
+    "showInsteadOfChip": true,
+    "arrival": "defocus",
+    "camera": "continuous-push-in",
+    "pressBeforeResult": true,
+    "oneChangePerBeat": true,
+    "typeText": true,
+    "markOnlyKeyFragment": true,
+    "components": "src/scenes/window.tsx"
+  },
+  "progression": {
+    "numbers": "count-up-from-zero",
+    "lists": "accumulate",
+    "negation": "strike-through-what-is-denied",
+    "placeReference": "camera-move-not-arrow"
+  }
+}

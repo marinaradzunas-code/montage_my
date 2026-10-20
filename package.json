@@ -1,0 +1,40 @@
+{
+  "name": "video-montage-template",
+  "version": "1.0.0",
+  "description": "Шаблон монтажа вертикального видео на Remotion: импорт, субтитры, сцены",
+  "repository": {},
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@remotion/captions": "4.0.525",
+    "@remotion/cli": "4.0.525",
+    "@remotion/media": "4.0.525",
+    "@remotion/tailwind-v4": "4.0.525",
+    "lucide-react": "^1.47.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.525",
+    "tailwindcss": "4.0.0"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.525",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "9.19.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "node scripts/ensure-generated.cjs && remotion studio",
+    "build": "node scripts/ensure-generated.cjs && remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc",
+    "render:compact": "remotion render src/index.ts Motion-Examples out/compact.mp4 --codec=h264 --video-bitrate=5M --audio-codec=aac --audio-bitrate=128k --concurrency=1",
+    "render:draft": "remotion render src/index.ts Motion-Examples out/draft.mp4 --codec=h264 --scale=0.5 --crf=25 --audio-bitrate=128k --concurrency=1",
+    "postinstall": "node scripts/ensure-generated.cjs && node scripts/fix-studio-shortcuts.cjs"
+  },
+  "sideEffects": [
+    "*.css",
+    "./src/project-fonts.ts"
+  ]
+}
